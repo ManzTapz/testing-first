@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lagu Favorit - 2112 Reality Club</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #6b8e23, #ffffff);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        select {
+            margin: 20px 0;
+            padding: 10px;
+            font-size: 1.2em;
+            background-color: #6b8e23;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        iframe {
+            width: 100%;
+            height: 315px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lagu Favorit - 2112 Reality Club</h1>
+        <select id="videoSelect" onchange="loadYouTubeVideo()">
+            <option value="">Pilih Lagu</option>
+            <option value="https://www.youtube.com/embed/M9-amTqnw9M">2112 - Reality Club</option>
+            <!-- You can add more YouTube links here if needed -->
+        </select>
+        <iframe id="videoPlayer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <script>
+        function loadYouTubeVideo() {
+            const videoSelect = document.getElementById('videoSelect');
+            const videoPlayer = document.getElementById('videoPlayer');
+            
+            const selectedVideo = videoSelect.value;
+            if (selectedVideo) {
+                // Set the iframe src to the selected YouTube URL
+                videoPlayer.src = selectedVideo;
+            }
+        }
+    </script>
+</body>
+</html>
